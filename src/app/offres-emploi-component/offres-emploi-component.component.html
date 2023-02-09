@@ -1,0 +1,30 @@
+<p>offres-emploi-component works!</p>
+<table class="table">
+    
+    <div *ngFor="let e of listeEmploi, let i=index" >
+       
+        <div class="card" style="width: 18rem; " style="margin :20px;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">reference: {{e.reference}} </p>
+              <h5 class="card-title">{{e.titre}}</h5>
+              <p class="card-text">:entreprise :{{e.entreprise}} </p>
+              <p class="card-text">Etat :{{e.etat}} 
+                <p><button *ngIf ="e.etat==false;else postulerButn"disabled>Postuler</button></p>
+              <ng-template #postulerButn>
+                <button>Postuler</button>
+              </ng-template>
+            </div>    
+              
+              
+            
+          </div>
+    </div>
+    <table>
+        ...
+      </table>
+      <br>
+      <button (click)="calculerNbOffresNonCloturees()">Bilan</button>
+      <p>Nombre d'offres non clôturées : {{nbOffresNonCloturees}}</p>
+      
+</table>
